@@ -1,40 +1,1094 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Navya | Finance Portfolio &amp; Capstone Projects (PGDM 25-27)</title>
-  <meta name="description" content="Academic & Capstone Projects in Corporate Valuation, DCF Financial Modeling, Quantitative Portfolio Optimization, and Financial Analytics by Navya, PGDM (Finance) Batch 2025-2027." />
+  <title>Navya | Finance &amp; Investment Analytics Portfolio (PGDM 25-27)</title>
+  <meta name="description" content="Academic &amp; Capstone Projects in Corporate Valuation, DCF Financial Modeling, Quantitative Portfolio Optimization, and Financial Analytics by Navya, PGDM (Finance) Batch 2025-2027." />
 
-  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
 
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ==========================================================================
+       MODERN FINTECH & VIBRANT INTERACTIVE DESIGN SYSTEM (NETLIFY / STRIPE INSPIRED)
+       ========================================================================== */
+
+    :root {
+      /* Dark Theme (Default) */
+      --bg-base: #0a0e17;
+      --bg-surface: #111827;
+      --bg-surface-elevated: #1a2234;
+      --bg-glass: rgba(17, 24, 39, 0.75);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-hover: rgba(99, 102, 241, 0.4);
+      --border-glow: rgba(139, 92, 246, 0.35);
+
+      --text-main: #f8fafc;
+      --text-muted: #cbd5e1;
+      --text-subtle: #94a3b8;
+
+      /* Vibrant Accent Gradients */
+      --grad-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+      --grad-emerald: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+      --grad-amber: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+      --grad-card: linear-gradient(160deg, rgba(26, 34, 52, 0.8) 0%, rgba(17, 24, 39, 0.95) 100%);
+
+      --accent-indigo: #6366f1;
+      --accent-violet: #8b5cf6;
+      --accent-pink: #ec4899;
+      --accent-cyan: #06b6d4;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+
+      --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.3);
+      --shadow-glow: 0 10px 30px -5px rgba(99, 102, 241, 0.3);
+      --shadow-glow-emerald: 0 10px 30px -5px rgba(16, 185, 129, 0.3);
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+    }
+
+    [data-theme="light"] {
+      --bg-base: #f8fafc;
+      --bg-surface: #ffffff;
+      --bg-surface-elevated: #f1f5f9;
+      --bg-glass: rgba(255, 255, 255, 0.85);
+      --border-subtle: #e2e8f0;
+      --border-hover: rgba(99, 102, 241, 0.4);
+      --border-glow: rgba(99, 102, 241, 0.25);
+
+      --text-main: #0f172a;
+      --text-muted: #334155;
+      --text-subtle: #64748b;
+
+      --grad-primary: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #db2777 100%);
+      --grad-emerald: linear-gradient(135deg, #059669 0%, #0284c7 100%);
+      --grad-card: linear-gradient(160deg, #ffffff 0%, #f8fafc 100%);
+
+      --shadow-subtle: 0 4px 20px rgba(15, 23, 42, 0.06);
+      --shadow-glow: 0 12px 28px -4px rgba(79, 70, 229, 0.2);
+      --shadow-glow-emerald: 0 12px 28px -4px rgba(5, 150, 105, 0.2);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      line-height: 1.65;
+      overflow-x: hidden;
+      position: relative;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* Ambient Colorful Glow Orbs in Background */
+    .bg-glow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.25;
+      animation: floatOrb 18s ease-in-out infinite alternate;
+    }
+
+    .orb-1 {
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, #6366f1, #8b5cf6);
+      top: -100px;
+      left: -100px;
+    }
+
+    .orb-2 {
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, #ec4899, #f43f5e);
+      top: 35%;
+      right: -120px;
+      animation-delay: -5s;
+    }
+
+    .orb-3 {
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, #06b6d4, #10b981);
+      bottom: -100px;
+      left: 20%;
+      animation-delay: -10s;
+    }
+
+    @keyframes floatOrb {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(60px, 40px) scale(1.1); }
+      100% { transform: translate(-40px, 80px) scale(0.95); }
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg-glass);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+      transition: all 0.3s ease;
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: var(--text-main);
+    }
+
+    .brand-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: var(--grad-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 1.05rem;
+      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.35);
+    }
+
+    .brand-text {
+      background: var(--grad-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: color 0.25s ease;
+      position: relative;
+      padding: 6px 0;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--accent-indigo);
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--grad-primary);
+      border-radius: 2px;
+      transition: width 0.25s ease;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .theme-toggle {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-main);
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: all 0.25s ease;
+    }
+
+    .theme-toggle:hover {
+      border-color: var(--border-hover);
+      transform: rotate(20deg) scale(1.05);
+    }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 22px;
+      border-radius: var(--radius-md);
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      border: none;
+    }
+
+    .btn-gradient {
+      background: var(--grad-primary);
+      color: #ffffff !important;
+      box-shadow: 0 4px 15px rgba(99, 102, 241, 0.35);
+    }
+
+    .btn-gradient:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(99, 102, 241, 0.5);
+    }
+
+    .btn-glass {
+      background: var(--bg-glass);
+      color: var(--text-main) !important;
+      border: 1px solid var(--border-subtle);
+      backdrop-filter: blur(8px);
+    }
+
+    .btn-glass:hover {
+      background: var(--bg-surface-elevated);
+      border-color: var(--border-hover);
+      transform: translateY(-2px);
+      color: var(--accent-indigo) !important;
+    }
+
+    .btn-sm {
+      padding: 8px 16px;
+      font-size: 0.85rem;
+      border-radius: var(--radius-sm);
+    }
+
+    /* HERO */
+    .hero {
+      padding: 80px 0 60px;
+    }
+
+    .hero-badge-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: rgba(99, 102, 241, 0.12);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      border-radius: var(--radius-full);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--accent-indigo);
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+    }
+
+    .badge-pulse {
+      width: 8px;
+      height: 8px;
+      background-color: var(--accent-emerald);
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+      animation: pulseGreen 2s infinite;
+    }
+
+    @keyframes pulseGreen {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+      70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    }
+
+    .hero-badge-spec {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-radius: var(--radius-full);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--accent-emerald);
+    }
+
+    .hero-title {
+      font-size: 3.4rem;
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -1.2px;
+      margin-bottom: 16px;
+    }
+
+    .hero-title .gradient-text {
+      background: var(--grad-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+      letter-spacing: -0.3px;
+    }
+
+    .hero-subtitle span {
+      color: var(--accent-indigo);
+    }
+
+    .hero-desc {
+      font-size: 1.08rem;
+      color: var(--text-subtle);
+      max-width: 780px;
+      line-height: 1.75;
+      margin-bottom: 34px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+    }
+
+    /* STATS & HIGHLIGHTS */
+    .stats-section {
+      margin: 10px 0 60px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .stat-card {
+      background: var(--grad-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow-subtle);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .stat-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--grad-primary);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-hover);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .stat-card:hover::before {
+      opacity: 1;
+    }
+
+    .stat-icon-wrap {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 14px;
+    }
+
+    .icon-indigo { background: rgba(99, 102, 241, 0.15); color: #818cf8; }
+    .icon-emerald { background: rgba(16, 185, 129, 0.15); color: #34d399; }
+    .icon-cyan { background: rgba(6, 182, 212, 0.15); color: #22d3ee; }
+    .icon-pink { background: rgba(236, 72, 153, 0.15); color: #f472b6; }
+
+    .stat-card h3 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.3px;
+    }
+
+    .stat-card p {
+      font-size: 0.86rem;
+      font-weight: 500;
+      color: var(--text-subtle);
+      margin-top: 4px;
+    }
+
+    /* SECTIONS */
+    .section {
+      padding: 60px 0;
+    }
+
+    .section-header {
+      margin-bottom: 36px;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      background: var(--grad-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: 2.25rem;
+      font-weight: 800;
+      letter-spacing: -0.6px;
+      color: var(--text-main);
+    }
+
+    .section-subtitle {
+      font-size: 1.02rem;
+      color: var(--text-subtle);
+      margin-top: 8px;
+      max-width: 680px;
+    }
+
+    /* FILTER TABS */
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 36px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .filter-btn {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 9px 20px;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--border-hover);
+      color: var(--text-main);
+    }
+
+    .filter-btn.active {
+      background: var(--grad-primary);
+      border-color: transparent;
+      color: #ffffff;
+      box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+    }
+
+    /* PROJECTS GRID */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .project-card {
+      background: var(--grad-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-subtle);
+      transition: all 0.35s ease;
+      position: relative;
+    }
+
+    .project-card:hover {
+      border-color: var(--border-glow);
+      box-shadow: 0 16px 40px -10px rgba(99, 102, 241, 0.2);
+      transform: translateY(-3px);
+    }
+
+    .project-header {
+      padding: 28px 34px 20px;
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 16px;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .card-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .badge-indigo { background: rgba(99, 102, 241, 0.15); color: #a5b4fc; border: 1px solid rgba(99, 102, 241, 0.3); }
+    .badge-emerald { background: rgba(16, 185, 129, 0.15); color: #6ee7b7; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .badge-cyan { background: rgba(6, 182, 212, 0.15); color: #67e8f9; border: 1px solid rgba(6, 182, 212, 0.3); }
+
+    .project-title {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.4px;
+      margin-top: 6px;
+    }
+
+    .project-body {
+      padding: 30px 34px;
+    }
+
+    .project-summary {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 24px;
+    }
+
+    .project-pillars {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-bottom: 26px;
+    }
+
+    .pillar-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      transition: border-color 0.25s ease;
+    }
+
+    .pillar-box:hover {
+      border-color: var(--border-hover);
+    }
+
+    .pillar-box h5 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .pillar-box p {
+      font-size: 0.85rem;
+      color: var(--text-subtle);
+      line-height: 1.6;
+    }
+
+    .screenshot-frame {
+      margin: 24px 0;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      background: #020617;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .screenshot-frame img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      object-position: top;
+      transition: transform 0.4s ease, opacity 0.3s ease;
+    }
+
+    .screenshot-frame:hover img {
+      transform: scale(1.02);
+      opacity: 0.9;
+    }
+
+    .zoom-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(10, 14, 23, 0.5);
+      backdrop-filter: blur(2px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .screenshot-frame:hover .zoom-overlay {
+      opacity: 1;
+    }
+
+    .zoom-pill {
+      background: #ffffff;
+      color: #0f172a;
+      padding: 10px 20px;
+      border-radius: var(--radius-full);
+      font-size: 0.88rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .tag-chip {
+      background: var(--bg-surface);
+      color: var(--text-muted);
+      border: 1px solid var(--border-subtle);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+    }
+
+    .project-footer {
+      padding: 20px 34px 26px;
+      border-top: 1px solid var(--border-subtle);
+      background: rgba(255, 255, 255, 0.015);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: var(--radius-md);
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+
+    .action-report {
+      background: var(--grad-primary);
+      color: #ffffff !important;
+      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+    }
+
+    .action-report:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(99, 102, 241, 0.5);
+    }
+
+    .action-model {
+      background: var(--grad-emerald);
+      color: #ffffff !important;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+    }
+
+    .action-model:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(16, 185, 129, 0.5);
+    }
+
+    .action-pbix {
+      background: var(--grad-amber);
+      color: #ffffff !important;
+      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+    }
+
+    .action-pbix:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(245, 158, 11, 0.5);
+    }
+
+    /* SKILLS */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .skill-box-card {
+      background: var(--grad-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 30px 26px;
+      box-shadow: var(--shadow-subtle);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .skill-box-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .skill-box-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .skill-box-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+    }
+
+    .skill-box-header h4 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.3px;
+    }
+
+    .skill-tags-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .finance-chip {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-main);
+      font-size: 0.86rem;
+      font-weight: 600;
+      padding: 7px 14px;
+      border-radius: var(--radius-sm);
+      transition: all 0.2s ease;
+    }
+
+    .finance-chip:hover {
+      background: rgba(99, 102, 241, 0.15);
+      border-color: var(--accent-indigo);
+      color: var(--accent-indigo);
+      transform: translateY(-1px);
+    }
+
+    /* EDUCATION */
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .edu-card {
+      background: var(--grad-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow-subtle);
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .edu-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-3px);
+    }
+
+    .edu-badge-top {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      font-size: 0.74rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      background: rgba(99, 102, 241, 0.15);
+      color: var(--accent-indigo);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+    }
+
+    .edu-card h4 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 4px;
+      padding-right: 75px;
+      letter-spacing: -0.3px;
+    }
+
+    .edu-cohort {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--accent-indigo);
+      margin-bottom: 12px;
+    }
+
+    .edu-desc {
+      font-size: 0.88rem;
+      color: var(--text-subtle);
+      line-height: 1.65;
+    }
+
+    .edu-bullets {
+      margin-top: 14px;
+      padding-left: 18px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .edu-bullets li {
+      margin-bottom: 8px;
+    }
+
+    /* CTA */
+    .contact-section {
+      padding: 70px 0 90px;
+    }
+
+    .cta-card {
+      background: linear-gradient(135deg, rgba(26, 34, 52, 0.95) 0%, rgba(10, 14, 23, 0.98) 100%);
+      border: 1px solid var(--border-hover);
+      border-radius: var(--radius-lg);
+      padding: 56px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-glow);
+    }
+
+    .cta-card h3 {
+      font-size: 2.3rem;
+      font-weight: 800;
+      letter-spacing: -0.6px;
+      margin-bottom: 14px;
+    }
+
+    .cta-card p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 640px;
+      margin: 0 auto 32px;
+      line-height: 1.7;
+    }
+
+    .cta-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      background: var(--bg-surface);
+      padding: 34px 0;
+      text-align: center;
+      font-size: 0.88rem;
+      color: var(--text-subtle);
+    }
+
+    /* MODAL */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      inset: 0;
+      background: rgba(10, 14, 23, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      justify-content: center;
+      align-items: center;
+      padding: 24px;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-box {
+      position: relative;
+      max-width: 92vw;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .modal-img {
+      max-width: 100%;
+      max-height: 82vh;
+      border-radius: var(--radius-md);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
+      object-fit: contain;
+    }
+
+    .modal-title {
+      margin-top: 16px;
+      color: #ffffff;
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .modal-btn-close {
+      position: absolute;
+      top: -46px;
+      right: 0;
+      color: #ffffff;
+      font-size: 34px;
+      font-weight: 700;
+      cursor: pointer;
+      background: none;
+      border: none;
+      line-height: 1;
+      transition: transform 0.2s ease;
+    }
+
+    .modal-btn-close:hover {
+      transform: scale(1.2);
+      color: var(--accent-pink);
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.4rem;
+      }
+      .nav-links {
+        display: none;
+      }
+      .project-header {
+        padding: 20px;
+      }
+      .project-body {
+        padding: 20px;
+      }
+      .project-footer {
+        padding: 16px 20px 22px;
+      }
+      .cta-card {
+        padding: 36px 20px;
+      }
+      .cta-card h3 {
+        font-size: 1.7rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- NAVIGATION -->
+  <!-- AMBIENT COLORFUL GLOW ORBS -->
+  <div class="bg-glow">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- NAVBAR -->
   <header class="navbar">
     <div class="container nav-container">
       <a href="#" class="brand-logo">
-        <span class="brand-badge">N</span>
-        <span>Navya</span>
+        <div class="brand-avatar">N</div>
+        <span class="brand-text">Navya</span>
       </a>
 
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
-        <li><a href="#competencies">Finance Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#credentials">Education</a></li>
+        <li><a href="#skills">Finance Skills</a></li>
+        <li><a href="#projects">Capstones</a></li>
+        <li><a href="#education">Education</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
 
       <div class="nav-actions">
-        <button id="themeToggle" class="theme-toggle-btn" title="Toggle Dark/Light Mode" aria-label="Toggle Theme">&#9790;</button>
-        <a href="resume.pdf" class="btn btn-primary btn-sm" download>&#128196; Download CV</a>
+        <button id="themeToggle" class="theme-toggle" title="Toggle Theme" aria-label="Toggle Theme">&#9790;</button>
+        <a href="resume.pdf" class="btn btn-gradient btn-sm" download>&#128196; Download CV</a>
       </div>
     </div>
   </header>
@@ -42,146 +1096,148 @@
   <main>
     <!-- HERO SECTION -->
     <section id="about" class="hero">
-      <div class="container hero-content">
-        <div>
-          <div class="hero-pill">
-            <span class="dot"></span> PGDM 2025–2027 &bull; Finance Specialization
+      <div class="container">
+        <div class="hero-badge-wrap">
+          <div class="hero-badge">
+            <span class="badge-pulse"></span> PGDM 2025â€“2027
           </div>
-          <h1 class="hero-title">
-            Hi, I'm <span class="highlight">Navya</span>
-          </h1>
-          <div class="hero-institution">
-            <span>Post Graduate Diploma in Management (PGDM 25–27)</span>
-            <span class="badge-merit">&#128200; Finance Specialization</span>
+          <div class="hero-badge-spec">
+            &#128200; Finance Specialization
           </div>
-          <p class="hero-desc">
-            Finance-driven management professional with an analytical foundation in corporate equity valuation, financial statement modeling, quantitative portfolio construction, and investment research. Passionate about translating complex balance sheets, market dynamics, and capital structures into decision-grade valuation models, risk-adjusted portfolio strategies, and data-backed business insights.
-          </p>
-          <div class="hero-cta">
-            <a href="resume.pdf" class="btn btn-primary" download>
-              <span>&#128196; Download Resume (CV)</span>
-            </a>
-            <a href="#projects" class="btn btn-secondary">
-              <span>&#128202; Explore Finance Projects</span>
-            </a>
-            <a href="#competencies" class="btn btn-secondary">
-              <span>&#128185; Key Finance Skills</span>
-            </a>
-          </div>
+        </div>
+
+        <h1 class="hero-title">
+          Hi, I'm <span class="gradient-text">Navya</span>
+        </h1>
+
+        <div class="hero-subtitle">
+          Finance Management Candidate &bull; <span>Placement Portfolio</span>
+        </div>
+
+        <p class="hero-desc">
+          Finance-driven management professional with an analytical foundation in corporate equity valuation, financial statement modeling, quantitative portfolio construction, and investment research. Passionate about translating complex balance sheets, market dynamics, and capital structures into decision-grade valuation models, risk-adjusted portfolio strategies, and data-backed business insights.
+        </p>
+
+        <div class="hero-ctas">
+          <a href="resume.pdf" class="btn btn-gradient" download>
+            <span>&#128196; Download Resume (CV)</span>
+          </a>
+          <a href="#projects" class="btn btn-glass">
+            <span>&#128202; Explore Finance Projects</span>
+          </a>
+          <a href="#skills" class="btn btn-glass">
+            <span>&#128185; View Core Skills</span>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- STATS / KPI BANNER -->
-    <section class="stats-banner">
+    <!-- STATS & METRICS SECTION -->
+    <section class="stats-section">
       <div class="container">
         <div class="stats-grid">
+          <!-- Stat 1 -->
           <div class="stat-card">
-            <div class="stat-icon">&#128200;</div>
-            <div class="stat-info">
-              <h4>Equity Valuation &amp; DCF</h4>
-              <p>Full 3-Statement &amp; Sensitivity Modeling (Infosys)</p>
-            </div>
+            <div class="stat-icon-wrap icon-indigo">&#128200;</div>
+            <h3>Equity Valuation</h3>
+            <p>Institutional DCF &amp; 3-Statement Model (Infosys Ltd)</p>
           </div>
+          <!-- Stat 2 -->
           <div class="stat-card">
-            <div class="stat-icon">&#128188;</div>
-            <div class="stat-info">
-              <h4>Portfolio Construction</h4>
-              <p>5Y Markowitz Sharpe Optimization (Real Estate)</p>
-            </div>
+            <div class="stat-icon-wrap icon-emerald">&#128188;</div>
+            <h3>Portfolio Construction</h3>
+            <p>5Y Markowitz Sharpe Optimization (Real Estate)</p>
           </div>
+          <!-- Stat 3 -->
           <div class="stat-card">
-            <div class="stat-icon">&#128202;</div>
-            <div class="stat-info">
-              <h4>Financial Analytics</h4>
-              <p>Retail Performance &amp; Margin Dashboards (Blinkit)</p>
-            </div>
+            <div class="stat-icon-wrap icon-cyan">&#128269;</div>
+            <h3>Retail &amp; Margin Analytics</h3>
+            <p>Interactive Power BI Dashboard (Blinkit Grocery)</p>
           </div>
+          <!-- Stat 4 -->
           <div class="stat-card">
-            <div class="stat-icon">&#127891;</div>
-            <div class="stat-info">
-              <h4>PGDM 2025–2027</h4>
-              <p>Finance Focus &bull; Placements Perspective</p>
-            </div>
+            <div class="stat-icon-wrap icon-pink">&#127891;</div>
+            <h3>PGDM 2025â€“2027</h3>
+            <p>Corporate Finance, Derivatives &amp; Valuation</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CORE COMPETENCIES SECTION (FINANCE-ORIENTED) -->
-    <section id="competencies" class="section">
+    <!-- CORE FINANCE SKILLS -->
+    <section id="skills" class="section">
       <div class="container">
         <div class="section-header">
           <span class="section-tag">Core Competencies</span>
           <h2 class="section-title">Finance &amp; Analytical Skillset</h2>
-          <p class="section-subtitle">A comprehensive finance toolkit spanning corporate valuation, investment analysis, quantitative risk modeling, and advanced spreadsheet engineering.</p>
+          <p class="section-subtitle">Institutional tools and techniques across equity research, valuation, modern portfolio theory, and financial spreadsheet engineering.</p>
         </div>
 
         <div class="skills-grid">
-          <!-- Card 1: Corporate Valuation -->
-          <div class="skill-category-card">
-            <div class="skill-card-header">
-              <div class="skill-card-icon">&#128185;</div>
+          <!-- Card 1 -->
+          <div class="skill-box-card">
+            <div class="skill-box-header">
+              <div class="skill-box-icon icon-indigo">&#128185;</div>
               <h4>Valuation &amp; Financial Modeling</h4>
             </div>
-            <div class="skills-list">
-              <span class="skill-badge">Discounted Cash Flow (DCF)</span>
-              <span class="skill-badge">Comparable Companies (Comps)</span>
-              <span class="skill-badge">Integrated 3-Statement Models</span>
-              <span class="skill-badge">WACC &amp; Capital Structure</span>
-              <span class="skill-badge">Working Capital Schedules</span>
-              <span class="skill-badge">Capex &amp; Depreciation Schedules</span>
-              <span class="skill-badge">Scenario &amp; Sensitivity Tables</span>
-              <span class="skill-badge">Enterprise &amp; Equity Value Multiples</span>
+            <div class="skill-tags-list">
+              <span class="finance-chip">Discounted Cash Flow (DCF)</span>
+              <span class="finance-chip">Comparable Companies (Comps)</span>
+              <span class="finance-chip">Integrated 3-Statement Modeling</span>
+              <span class="finance-chip">WACC &amp; Capital Structure</span>
+              <span class="finance-chip">Working Capital Schedules</span>
+              <span class="finance-chip">Capex &amp; Depreciation Schedules</span>
+              <span class="finance-chip">Scenario &amp; Sensitivity Analysis</span>
+              <span class="finance-chip">EV Multiples (EV/EBITDA, P/E)</span>
             </div>
           </div>
 
-          <!-- Card 2: Investment & Portfolio -->
-          <div class="skill-category-card">
-            <div class="skill-card-header">
-              <div class="skill-card-icon">&#128201;</div>
+          <!-- Card 2 -->
+          <div class="skill-box-card">
+            <div class="skill-box-header">
+              <div class="skill-box-icon icon-emerald">&#128201;</div>
               <h4>Portfolio Management &amp; Markets</h4>
             </div>
-            <div class="skills-list">
-              <span class="skill-badge">Modern Portfolio Theory (Markowitz)</span>
-              <span class="skill-badge">Sharpe Ratio Maximization</span>
-              <span class="skill-badge">Covariance &amp; Correlation Matrices</span>
-              <span class="skill-badge">Minimum Variance Portfolio (MVP)</span>
-              <span class="skill-badge">Asset Allocation &amp; Diversification</span>
-              <span class="skill-badge">CAPM &amp; Beta Benchmarking</span>
-              <span class="skill-badge">Risk-Adjusted Return Metrics</span>
-              <span class="skill-badge">Index Benchmarking (NIFTY 50 &amp; Sectoral)</span>
+            <div class="skill-tags-list">
+              <span class="finance-chip">Modern Portfolio Theory (Markowitz)</span>
+              <span class="finance-chip">Sharpe Ratio Maximization</span>
+              <span class="finance-chip">Covariance &amp; Correlation Matrices</span>
+              <span class="finance-chip">Minimum Variance Portfolio (MVP)</span>
+              <span class="finance-chip">Asset Allocation &amp; Diversification</span>
+              <span class="finance-chip">CAPM &amp; Beta Benchmarking</span>
+              <span class="finance-chip">Risk-Adjusted Return Metrics</span>
+              <span class="finance-chip">Sector Benchmarking (Nifty Indices)</span>
             </div>
           </div>
 
-          <!-- Card 3: Financial Analysis & Tools -->
-          <div class="skill-category-card">
-            <div class="skill-card-header">
-              <div class="skill-card-icon">&#128269;</div>
-              <h4>Financial Reporting &amp; Analytics Tools</h4>
+          <!-- Card 3 -->
+          <div class="skill-box-card">
+            <div class="skill-box-header">
+              <div class="skill-box-icon icon-cyan">&#128202;</div>
+              <h4>Financial Reporting &amp; Analytics</h4>
             </div>
-            <div class="skills-list">
-              <span class="skill-badge">Financial Statement Analysis</span>
-              <span class="skill-badge">Ratio Analysis (Liquidity, Solvency, Margins)</span>
-              <span class="skill-badge">Cash Flow Forecasting</span>
-              <span class="skill-badge">Advanced MS Excel (Solver, XLOOKUP, Pivot)</span>
-              <span class="skill-badge">Power BI for Financial Insights</span>
-              <span class="skill-badge">DAX &amp; Financial KPI Dashboards</span>
-              <span class="skill-badge">Investment Memo &amp; Report Formulation</span>
-              <span class="skill-badge">Corporate Finance Principles</span>
+            <div class="skill-tags-list">
+              <span class="finance-chip">Financial Statement Analysis</span>
+              <span class="finance-chip">Ratio Analysis (Liquidity, Solvency)</span>
+              <span class="finance-chip">Cash Flow Forecasting</span>
+              <span class="finance-chip">Advanced Excel (Solver, XLOOKUP)</span>
+              <span class="finance-chip">Power BI Financial Dashboards</span>
+              <span class="finance-chip">DAX &amp; KPI Visualization</span>
+              <span class="finance-chip">Investment Memos &amp; Reporting</span>
+              <span class="finance-chip">Corporate Finance Strategy</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FEATURED ACADEMIC PROJECTS -->
+    <!-- FEATURED FINANCE PROJECTS -->
     <section id="projects" class="section">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag">Featured Work</span>
+          <span class="section-tag">Applied Research</span>
           <h2 class="section-title">Finance Capstone &amp; Academic Projects</h2>
-          <p class="section-subtitle">Data-driven, institutionally structured finance projects demonstrating hands-on proficiency in corporate valuation, portfolio optimization, and commercial analytics.</p>
+          <p class="section-subtitle">Rigorous, data-backed models and executive reports demonstrating technical depth for placement evaluations.</p>
         </div>
 
         <!-- Filter Tabs -->
@@ -189,7 +1245,7 @@
           <button class="filter-btn active" data-filter="all">All Projects (3)</button>
           <button class="filter-btn" data-filter="equity">Equity Valuation</button>
           <button class="filter-btn" data-filter="portfolio">Portfolio Management</button>
-          <button class="filter-btn" data-filter="analytics">Financial &amp; Retail Analytics</button>
+          <button class="filter-btn" data-filter="analytics">Retail &amp; Margin BI</button>
         </div>
 
         <div class="projects-grid">
@@ -198,46 +1254,44 @@
           <article class="project-card" data-category="equity">
             <header class="project-header">
               <div>
-                <span class="project-category-badge badge-equity">&#128202; Equity Research &amp; DCF</span>
+                <span class="card-badge badge-indigo">&#128202; Equity Research &bull; Valuation</span>
                 <h3 class="project-title">Infosys Ltd &mdash; Comprehensive Equity Valuation &amp; Financial Model</h3>
               </div>
-              <span class="project-meta-date">Equity Research &bull; Valuation Model</span>
             </header>
             <div class="project-body">
               <p class="project-summary">
-                An institutional equity valuation of Infosys Limited utilizing Discounted Cash Flow (DCF) and Comparable Company (Comps) methodologies. Developed a synchronized 3-statement model (Income Statement, Balance Sheet, Cash Flow), calculated WACC, established dynamic working capital and debt schedules, and benchmarked enterprise value multiples against industry peers.
+                An institutional equity valuation of Infosys Limited utilizing Discounted Cash Flow (DCF) and Comparable Company (Comps) methodologies. Constructed synchronized 3-statement models, calculated cost of capital (WACC), built dedicated schedules for working capital &amp; Capex, and conducted peer multiple benchmarking.
               </p>
 
-              <div class="project-features">
-                <div class="feature-box">
+              <div class="project-pillars">
+                <div class="pillar-box">
                   <h5>&#128200; Integrated 3-Statement Model</h5>
-                  <p>Built fully connected financial statements with supporting schedules for Depreciation, Working Capital, and Debt amortization.</p>
+                  <p>Harmonized Income Statement, Balance Sheet, and Cash Flow statement with linked schedules for Debt, Capex, and Depreciation.</p>
                 </div>
-                <div class="feature-box">
+                <div class="pillar-box">
                   <h5>&#128185; Discounted Cash Flow (DCF)</h5>
-                  <p>Projected Free Cash Flows to Firm (FCFF), estimated terminal growth rates, and modeled sensitivity matrices across discount rates.</p>
+                  <p>Modeled Free Cash Flows to Firm (FCFF), established terminal value horizons, and formulated discount rate sensitivity matrices.</p>
                 </div>
-                <div class="feature-box">
+                <div class="pillar-box">
                   <h5>&#128196; Comps &amp; EV Multiples</h5>
-                  <p>Comparative valuation across key multiples (EV/EBITDA, P/E, EV/Sales) and return metrics (ROE, ROCE) against peer IT companies.</p>
+                  <p>Benchmarked EV/EBITDA, P/E, EV/Sales, and return metrics (ROE, ROCE) against leading Indian IT sector peers.</p>
                 </div>
               </div>
 
               <div class="project-tags">
-                <span class="tech-tag">DCF Valuation</span>
-                <span class="tech-tag">Financial Modeling</span>
-                <span class="tech-tag">WACC</span>
-                <span class="tech-tag">3-Statement Model</span>
-                <span class="tech-tag">Comps &amp; EV Multiples</span>
-                <span class="tech-tag">MS Excel</span>
-                <span class="tech-tag">Equity Research</span>
+                <span class="tag-chip">DCF Valuation</span>
+                <span class="tag-chip">Financial Modeling</span>
+                <span class="tag-chip">WACC</span>
+                <span class="tag-chip">3-Statement Model</span>
+                <span class="tag-chip">Comps Multiples</span>
+                <span class="tag-chip">MS Excel</span>
               </div>
             </div>
             <footer class="project-footer">
-              <a href="INFOSYS - FINAL REPORT.pdf" target="_blank" class="download-link report">
+              <a href="INFOSYS - FINAL REPORT.pdf" target="_blank" class="action-btn action-report">
                 &#128196; View Research Report (.pdf)
               </a>
-              <a href="Infosys Complete sheet.xlsx" download class="download-link model">
+              <a href="Infosys Complete sheet.xlsx" download class="action-btn action-model">
                 &#128185; Download Financial Model (.xlsx)
               </a>
             </footer>
@@ -247,47 +1301,45 @@
           <article class="project-card" data-category="portfolio">
             <header class="project-header">
               <div>
-                <span class="project-category-badge badge-portfolio">&#128201; Quantitative Portfolio Construction</span>
+                <span class="card-badge badge-emerald">&#128201; Quantitative Portfolio Construction</span>
                 <h3 class="project-title">Indian Real Estate Sector &mdash; 5-Year Portfolio Risk &amp; Return Optimization</h3>
               </div>
-              <span class="project-meta-date">Portfolio Construction &bull; Risk Optimization</span>
             </header>
             <div class="project-body">
               <p class="project-summary">
-                A quantitative 5-year portfolio construction and optimization model analyzing leading real estate developers (Anant Raj, Oberoi Realty, Phoenix Mills) benchmarked against the Nifty Realty Index (CNXREALTY) and NIFTY 50. Modeled daily log-returns, formulated covariance matrices, and optimized asset allocations using Excel Solver to maximize the Sharpe Ratio and determine the Minimum Variance Portfolio.
+                A quantitative 5-year portfolio construction and optimization model analyzing leading real estate developers (Anant Raj, Oberoi Realty, Phoenix Mills) benchmarked against the Nifty Realty Index (CNXREALTY) and NIFTY 50. Formulated daily log-returns, covariance matrices, and optimized asset allocations using Excel Solver to maximize the Sharpe Ratio.
               </p>
 
-              <div class="project-features">
-                <div class="feature-box">
+              <div class="project-pillars">
+                <div class="pillar-box">
                   <h5>&#128202; Markowitz Optimization</h5>
-                  <p>Applied Modern Portfolio Theory to identify optimal asset weightings maximizing portfolio Sharpe ratio under risk-return constraints.</p>
+                  <p>Applied Modern Portfolio Theory to identify optimal weights for the Sharpe-maximizing portfolio and Minimum Variance Portfolio.</p>
                 </div>
-                <div class="feature-box">
+                <div class="pillar-box">
                   <h5>&#128201; Covariance &amp; Diversification</h5>
-                  <p>Derived 5-year daily log-return matrices to quantify cross-asset correlation, systemic beta exposure, and diversification efficiency.</p>
+                  <p>Calculated 5-year covariance and correlation matrices to measure portfolio beta exposure and systemic diversification.</p>
                 </div>
-                <div class="feature-box">
-                  <h5>&#128196; Strategic Rationale &amp; Tailwinds</h5>
-                  <p>Authored a 3-page executive report examining residential demand trends, commercial leasing yields, and balance sheet deleveraging.</p>
+                <div class="pillar-box">
+                  <h5>&#128196; Executive Rationale</h5>
+                  <p>Synthesized real estate sector fundamentals, residential absorption trends, and commercial lease yields into a 3-page institutional report.</p>
                 </div>
               </div>
 
               <div class="project-tags">
-                <span class="tech-tag">Portfolio Optimization</span>
-                <span class="tech-tag">Markowitz Theory</span>
-                <span class="tech-tag">Sharpe Ratio</span>
-                <span class="tech-tag">Covariance Matrix</span>
-                <span class="tech-tag">Excel Solver</span>
-                <span class="tech-tag">Nifty Realty Benchmark</span>
-                <span class="tech-tag">Risk &amp; Return Analysis</span>
+                <span class="tag-chip">Portfolio Optimization</span>
+                <span class="tag-chip">Markowitz Theory</span>
+                <span class="tag-chip">Sharpe Ratio</span>
+                <span class="tag-chip">Covariance Matrix</span>
+                <span class="tag-chip">Excel Solver</span>
+                <span class="tag-chip">Risk Metrics</span>
               </div>
             </div>
             <footer class="project-footer">
-              <a href="RealEstate_Portfolio_Rationale_3Page.pdf" target="_blank" class="download-link report">
+              <a href="RealEstate_Portfolio_Rationale_3Page.pdf" target="_blank" class="action-btn action-report">
                 &#128196; View Executive Rationale (.pdf)
               </a>
-              <a href="India_RealEstate_5Y_Portfolio_Analysis.xlsx" download class="download-link model">
-                &#128185; Download Quantitative Model (.xlsx)
+              <a href="India_RealEstate_5Y_Portfolio_Analysis.xlsx" download class="action-btn action-model">
+                &#128185; Download Portfolio Model (.xlsx)
               </a>
             </footer>
           </article>
@@ -296,53 +1348,51 @@
           <article class="project-card" data-category="analytics">
             <header class="project-header">
               <div>
-                <span class="project-category-badge badge-analytics">&#128269; Commercial &amp; Sales Analytics</span>
+                <span class="card-badge badge-cyan">&#128269; Retail &amp; Commercial Analytics</span>
                 <h3 class="project-title">Blinkit Grocery &mdash; End-to-End Sales Performance &amp; Margin Dashboard</h3>
               </div>
-              <span class="project-meta-date">Business Intelligence &bull; Commercial Analytics</span>
             </header>
             <div class="project-body">
               <p class="project-summary">
-                Built an interactive sales and margin analytics dashboard in Power BI analyzing 8,500+ SKU transactions and $1.20M in total grocery revenue. Evaluated sales distributions across outlet tiers, establishment maturity, item visibility, and category profitability to provide data-backed operational insights.
+                Designed and built an interactive retail sales performance dashboard in Power BI analyzing 8,500+ SKU transactions and $1.20M in total grocery sales. Analyzed revenue across outlet establishment tiers, outlet sizing, fat content segments, and item visibility.
               </p>
 
-              <!-- Interactive Screenshot Lightbox Trigger -->
-              <div class="project-media-wrapper zoom-trigger" data-caption="Blinkit Grocery Sales Analytics Dashboard in Power BI (Total Sales: $1.20M, Items: 8,523, Avg Rating: 3.9)">
+              <!-- Interactive Zoomable Screenshot Frame -->
+              <div class="screenshot-frame zoom-trigger" data-caption="Blinkit Grocery Sales Analytics Dashboard in Power BI (Total Sales: $1.20M, Items: 8,523, Avg Rating: 3.9)">
                 <img src="blinkit-screenshot.png" alt="Blinkit Power BI Sales Analytics Dashboard" />
-                <div class="media-zoom-overlay">
-                  <span class="zoom-badge">&#128269; Click to Inspect Full-Screen Dashboard</span>
+                <div class="zoom-overlay">
+                  <div class="zoom-pill">&#128269; Click to Zoom Full Dashboard</div>
                 </div>
               </div>
 
-              <div class="project-features">
-                <div class="feature-box">
+              <div class="project-pillars">
+                <div class="pillar-box">
                   <h5>&#128202; Interactive BI Architecture</h5>
-                  <p>Constructed dynamic KPI cards, outlet performance breakdowns by location tier (Tier 1, 2, 3), and establishment timeline trends.</p>
+                  <p>Dynamic KPI cards, outlet performance breakdowns by location tier (Tier 1, 2, 3), and establishment timeline trends.</p>
                 </div>
-                <div class="feature-box">
-                  <h5>&#128185; Product &amp; Margin Segmentation</h5>
+                <div class="pillar-box">
+                  <h5>&#128185; Margin &amp; Product Segmentation</h5>
                   <p>Evaluated fat content splits (Regular vs. Low Fat), item visibility correlations, and customer rating distributions across categories.</p>
                 </div>
-                <div class="feature-box">
+                <div class="pillar-box">
                   <h5>&#128193; Clean Data Pipeline</h5>
-                  <p>Structured raw retail data, handled missing values, and created DAX measures for executive reporting and commercial decision-making.</p>
+                  <p>Standardized raw retail datasets, handled missing values, and created DAX measures for executive reporting.</p>
                 </div>
               </div>
 
               <div class="project-tags">
-                <span class="tech-tag">Power BI</span>
-                <span class="tech-tag">DAX</span>
-                <span class="tech-tag">Commercial Analytics</span>
-                <span class="tech-tag">Data Modeling</span>
-                <span class="tech-tag">Advanced Excel</span>
-                <span class="tech-tag">Executive Dashboard</span>
+                <span class="tag-chip">Power BI</span>
+                <span class="tag-chip">DAX</span>
+                <span class="tag-chip">Commercial Analytics</span>
+                <span class="tag-chip">Data Modeling</span>
+                <span class="tag-chip">Advanced Excel</span>
               </div>
             </div>
             <footer class="project-footer">
-              <a href="Blinkit-analysis.pbix" download class="download-link pbix">
+              <a href="Blinkit-analysis.pbix" download class="action-btn action-pbix">
                 &#128202; Download Power BI Dashboard (.pbix)
               </a>
-              <a href="BlinkIT Grocery Data.xlsx" download class="download-link model">
+              <a href="BlinkIT Grocery Data.xlsx" download class="action-btn action-model">
                 &#128193; Download Dataset (.xlsx)
               </a>
             </footer>
@@ -353,70 +1403,69 @@
     </section>
 
     <!-- EDUCATION SECTION -->
-    <section id="credentials" class="section">
+    <section id="education" class="section">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag">Academic Background</span>
-          <h2 class="section-title">Education &amp; Academic Profile</h2>
-          <p class="section-subtitle">Academic training focused on core finance, valuation, investment strategy, and spreadsheet analytics.</p>
+          <span class="section-tag">Academic Profile</span>
+          <h2 class="section-title">Education &amp; Academic Credentials</h2>
+          <p class="section-subtitle">Academic training focused on corporate finance, valuation, investment strategy, and spreadsheet analytics.</p>
         </div>
 
-        <div class="education-grid">
-          <!-- Edu Card 1: PGDM -->
+        <div class="edu-grid">
+          <!-- Card 1: PGDM -->
           <div class="edu-card">
-            <span class="edu-badge-tag">Management</span>
+            <span class="edu-badge-top">Management</span>
             <h4>Post Graduate Diploma in Management (PGDM)</h4>
-            <div class="edu-institute">Finance Specialization &bull; Batch 2025&ndash;2027</div>
-            <p class="edu-details">Core Focus: Corporate Finance, Investment Analysis, Valuation &amp; Portfolio Management</p>
-            <ul class="edu-list">
-              <li><strong>Specialization:</strong> Finance &amp; Financial Analytics.</li>
-              <li><strong>Coursework:</strong> Financial Modeling, Equity Research, Corporate Valuation, Security Analysis &amp; Portfolio Management, Derivatives.</li>
-              <li><strong>Applied Projects:</strong> DCF Valuation of Infosys Ltd, 5-Year Real Estate Portfolio Optimization Model, Retail Sales Performance Analytics.</li>
+            <div class="edu-cohort">Batch 2025&ndash;2027 &bull; Finance Specialization</div>
+            <p class="edu-desc">Core Focus: Corporate Valuation, Financial Modeling, Portfolio Management, Capital Markets &amp; Financial Derivatives.</p>
+            <ul class="edu-bullets">
+              <li><strong>Applied Projects:</strong> Complete DCF Model of Infosys Ltd, 5-Year Real Estate Portfolio Optimization, Retail Sales Analytics.</li>
+              <li><strong>Curriculum:</strong> Financial Statement Analysis, Investment Banking, Equity Research, Corporate Finance, Risk Management.</li>
             </ul>
           </div>
 
-          <!-- Edu Card 2: Undergraduate -->
+          <!-- Card 2: Undergraduate -->
           <div class="edu-card">
-            <span class="edu-badge-tag">Undergraduate</span>
-            <h4>Undergraduate Degree</h4>
-            <div class="edu-institute">University of Delhi</div>
-            <p class="edu-details">Analytical &amp; Quantitative Foundation</p>
-            <ul class="edu-list">
-              <li>Built strong foundations in quantitative analysis, business communication, and critical problem solving.</li>
-              <li>Active participant in academic seminars, debate societies, and inter-collegiate events.</li>
+            <span class="edu-badge-top">Undergraduate</span>
+            <h4>Undergraduate Studies</h4>
+            <div class="edu-cohort">University of Delhi</div>
+            <p class="edu-desc">Foundational quantitative and business disciplines emphasizing analytical reasoning and economics.</p>
+            <ul class="edu-bullets">
+              <li>Built strong capabilities in quantitative methods, data analysis, and business communication.</li>
+              <li>Active participant in collegiate debate, academic presentations, and student leadership forums.</li>
             </ul>
           </div>
 
-          <!-- Edu Card 3: Certifications -->
+          <!-- Card 3: Certifications -->
           <div class="edu-card">
-            <span class="edu-badge-tag">Credentials</span>
-            <h4>Certifications &amp; Technical Accreditations</h4>
-            <div class="edu-institute">Capital Markets &amp; Analytical Tooling</div>
-            <p class="edu-details">Targeted skill development across financial modeling &amp; data tooling</p>
-            <ul class="edu-list">
+            <span class="edu-badge-top">Accreditation</span>
+            <h4>Finance &amp; Analytical Certifications</h4>
+            <div class="edu-cohort">Capital Markets &amp; Modeling</div>
+            <p class="edu-desc">Targeted skill development across financial markets, data visualization, and modeling.</p>
+            <ul class="edu-bullets">
               <li><strong>NISM:</strong> Investor Awareness &amp; Capital Markets Certification.</li>
-              <li><strong>McKinsey.org:</strong> Forward Program &mdash; Problem Solving &amp; Strategic Decision-Making.</li>
-              <li><strong>Advanced Excel:</strong> Financial Modeling, Solver, Scenario Analysis &amp; Dashboarding.</li>
-              <li><strong>Power BI &amp; SQL:</strong> Business Intelligence &amp; Relational Database Foundations.</li>
+              <li><strong>McKinsey.org:</strong> Forward Program &mdash; Problem Solving &amp; Leadership.</li>
+              <li><strong>Advanced MS Excel:</strong> Financial Modeling, Solver, Scenario Analysis &amp; Pivots.</li>
+              <li><strong>Power BI &amp; SQL:</strong> Business Intelligence Dashboards &amp; Database Foundations.</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- RECRUITER CONTACT CALLOUT -->
+    <!-- CONTACT / RECRUITER CTA -->
     <section id="contact" class="contact-section">
       <div class="container">
-        <div class="cta-box">
+        <div class="cta-card">
           <h3>Interested in Discussing Finance Opportunities?</h3>
           <p>
-            I am seeking opportunities in Financial Analysis, Equity Research, Investment Banking, Corporate Finance, and Financial Analytics where I can contribute decision-grade financial models and quantitative insights.
+            I am seeking internship and placement opportunities in Financial Analysis, Equity Research, Investment Banking, Corporate Finance, and Financial Analytics where I can contribute institutional-grade financial models and quantitative insights.
           </p>
-          <div class="cta-actions">
-            <a href="resume.pdf" class="btn btn-white" download>
+          <div class="cta-buttons">
+            <a href="resume.pdf" class="btn btn-gradient" download>
               &#128196; Download Full Resume (CV)
             </a>
-            <a href="mailto:your.email@example.com" class="btn btn-dark-outline">
+            <a href="mailto:your.email@example.com" class="btn btn-glass">
               &#9993; Email Me
             </a>
           </div>
@@ -429,21 +1478,113 @@
   <footer>
     <div class="container">
       <p><strong>Navya</strong> &bull; PGDM (Finance Specialization) Batch 2025&ndash;2027</p>
-      <p style="margin-top: 6px; font-size: 0.82rem;">Academic &amp; Placement Portfolio &bull; Designed for Finance Placements &amp; Recruitment</p>
+      <p style="margin-top: 6px; font-size: 0.82rem; opacity: 0.8;">Academic &amp; Placement Portfolio &bull; Designed for Finance Placements &amp; Recruitment</p>
     </div>
   </footer>
 
   <!-- IMAGE LIGHTBOX MODAL -->
   <div id="imageModal" class="modal" role="dialog" aria-modal="true">
-    <div class="modal-content-wrapper">
-      <button id="modalClose" class="modal-close" aria-label="Close modal">&times;</button>
+    <div class="modal-box">
+      <button id="modalClose" class="modal-btn-close" aria-label="Close modal">&times;</button>
       <img id="modalImage" class="modal-img" src="" alt="Project Full Screen Preview" />
-      <div id="modalCaption" class="modal-caption"></div>
+      <div id="modalTitle" class="modal-title"></div>
     </div>
   </div>
 
-  <!-- Scripts -->
-  <script src="js/main.js"></script>
+  <!-- EMBEDDED JAVASCRIPT -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // 1. Theme Switcher (Dark / Light Mode)
+      const themeToggle = document.getElementById("themeToggle");
+      const htmlElement = document.documentElement;
+
+      const savedTheme = localStorage.getItem("portfolio-theme") || "dark";
+      htmlElement.setAttribute("data-theme", savedTheme);
+      themeToggle.innerHTML = savedTheme === "dark" ? "&#9728;" : "&#9790;";
+
+      themeToggle.addEventListener("click", () => {
+        const currentTheme = htmlElement.getAttribute("data-theme");
+        const nextTheme = currentTheme === "dark" ? "light" : "dark";
+        htmlElement.setAttribute("data-theme", nextTheme);
+        localStorage.setItem("portfolio-theme", nextTheme);
+        themeToggle.innerHTML = nextTheme === "dark" ? "&#9728;" : "&#9790;";
+      });
+
+      // 2. Project Category Filtering
+      const filterBtns = document.querySelectorAll(".filter-btn");
+      const projectCards = document.querySelectorAll(".project-card");
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+          filterBtns.forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+
+          const filterVal = btn.getAttribute("data-filter");
+          projectCards.forEach(card => {
+            const cardCategory = card.getAttribute("data-category");
+            if (filterVal === "all" || cardCategory === filterVal) {
+              card.style.display = "block";
+              card.style.animation = "fadeIn 0.35s ease forwards";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        });
+      });
+
+      // 3. Image Lightbox Modal
+      const modal = document.getElementById("imageModal");
+      const modalImg = document.getElementById("modalImage");
+      const modalTitle = document.getElementById("modalTitle");
+      const modalClose = document.getElementById("modalClose");
+      const zoomTriggers = document.querySelectorAll(".zoom-trigger");
+
+      zoomTriggers.forEach(trigger => {
+        trigger.addEventListener("click", () => {
+          const img = trigger.querySelector("img");
+          modalImg.src = img.src;
+          modalTitle.textContent = trigger.getAttribute("data-caption") || img.alt || "Project Preview";
+          modal.classList.add("active");
+          document.body.style.overflow = "hidden";
+        });
+      });
+
+      const closeModal = () => {
+        modal.classList.remove("active");
+        document.body.style.overflow = "";
+      };
+
+      if (modalClose) modalClose.addEventListener("click", closeModal);
+      if (modal) {
+        modal.addEventListener("click", (e) => {
+          if (e.target === modal) closeModal();
+        });
+      }
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modal.classList.contains("active")) closeModal();
+      });
+
+      // 4. Smooth Nav Scrollspy
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll(".nav-links a");
+
+      window.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach(sec => {
+          const top = sec.offsetTop - 120;
+          const height = sec.clientHeight;
+          if (window.pageYOffset >= top && window.pageYOffset < top + height) {
+            current = sec.getAttribute("id");
+          }
+        });
+        navLinks.forEach(link => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${current}`) {
+            link.classList.add("active");
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
-
